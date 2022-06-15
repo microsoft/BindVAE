@@ -10,7 +10,6 @@ no.cores = 10
 args <- commandArgs(trailingOnly = TRUE)
 bed.file = args[1]
 res.dir = args[2]
-feats.file = args[3]
 prefix = args[4]
 
 bed <- read.table(bed.file,header = F, sep="\n",stringsAsFactors=FALSE)
@@ -29,12 +28,6 @@ dictionary.file = "positional_mismatch_dict_kmer8_mismatches2.Rdata"
 train.test.data <- build.train.test.data.seqs(pos.seqs, dictionary.file)
 
 print(dim(train.test.data$features))
-feature.inds <- read.table(feats.file)
-allfeatnames = colnames(train.test.data$features)
-indices = which(allfeatnames %in% feature.inds$V1)
-features <- train.test.data$features[,indices]
-train.test.data$features <- features
-print(dim(features))
 
     saveRDS(train.test.data, file = sprintf("%s/%s_features.Rds",res.dir,prefix))
 
