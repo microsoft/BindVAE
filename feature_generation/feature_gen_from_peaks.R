@@ -15,8 +15,7 @@ max.examples=100000
 args <- commandArgs(trailingOnly = TRUE)
 bed.file = args[1]
 res.dir = args[2]
-feats.file = args[3]
-prefix = args[4]
+prefix = args[3]
 
 bed <- read.table(bed.file,header = F, sep="\t",stringsAsFactors=FALSE)
 peaks <- GRanges(seqnames = bed$V1, ranges = IRanges(bed$V2,bed$V3), summit.pos=bed$V10, score=bed$V5)
