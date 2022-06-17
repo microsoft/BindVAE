@@ -1,4 +1,6 @@
 
-Trained model files are available here:
+Trained model files are available on zenodo.
 
-For GM12878: https://zenodo.org/record/6643628#.Yqj-hKHMLVw
+Please look at the github repo here for the zenodo id and link to the files:
+https://github.com/microsoft/BindVAE/tree/main/training
+
