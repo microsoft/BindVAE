@@ -1,5 +1,10 @@
 # Introduction 
 Source code of BindVAE paper on Variational Auto Encoders for learning binding signatures of transcription factors
+Paper on biorxiv, soon to be published in Genome Biology.
+
+https://www.biorxiv.org/content/10.1101/2021.09.23.461564v3
+![image](https://user-images.githubusercontent.com/7157465/179075967-f0add847-089a-44aa-9caa-bc6f94a447e7.png)
+
 
 # Installation
 1.	Installation process for the machine learning model
