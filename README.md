@@ -16,8 +16,8 @@ Using the supplied yaml file:
 
 If you have most of the dependencies already installed, the following simpler setup will suffice:
 
-	conda env create --name tfp python=3.7<br>
-	conda install tensorflow-gpu<br>
+	conda env create --name tfp python=3.7
+	conda install tensorflow-gpu
 	conda install tensorflow-probability
 
 
@@ -27,18 +27,18 @@ Note: In some versions of tensorflow / tensorflow-probability, you might get a "
 
 The feature generation code uses R
 
-install.packages("BiocManager")<br>
-BiocManager::install("GenomicRanges")<br>
-BiocManager::install("BSgenome.Hsapiens.UCSC.hg19")<br>
+	install.packages("BiocManager")
+	BiocManager::install("GenomicRanges")
+	BiocManager::install("BSgenome.Hsapiens.UCSC.hg19")
 
-install.packages("remotes")<br>
-remotes::install_github("ManuSetty/ChIPKernels")
+	install.packages("remotes")
+	remotes::install_github("ManuSetty/ChIPKernels")
 
 
 
 ## TRAINING
 
-python run.py --model_dir model_dir --train_path data/gm12878_all8merfeats_1k_examples.txt --eval_path data/gm12878_all8merfeats_1k_examples.txt --test_path data/SELEX_probes_all8merfeats_1k_samples.txt --num_topics 25 --prior_initial_value 10 --mode train --vocab_path data/vocabulary_all8mers_with_wildcards.npy
+	python run.py --model_dir model_dir --train_path data/gm12878_all8merfeats_1k_examples.txt --eval_path data/gm12878_all8merfeats_1k_examples.txt --test_path data/SELEX_probes_all8merfeats_1k_samples.txt --num_topics 25 --prior_initial_value 10 --mode train --vocab_path data/vocabulary_all8mers_with_wildcards.npy
 
 Parameters that are most sensitive and best ones to tweak:
 
@@ -53,13 +53,13 @@ Modifying the number of layers and their width in the Encoder.
 
 If you want to use a previously saved model to do inference on new data, use the code in "test" mode as follows:
 
-python run.py --model_dir model_dir --test_path data/SELEX_probes_features.txt --num_topics 25 --prior_initial_value 10 --mode test --vocab_path data/vocabulary_all8mers_with_wildcards.npy
+	python run.py --model_dir model_dir --test_path data/SELEX_probes_features.txt --num_topics 25 --prior_initial_value 10 --mode test --vocab_path data/vocabulary_all8mers_with_wildcards.npy
 
 Output: a matrix of size N x K, where N = number of examples in the input file, K = number of topics / latent dimensions.
 
 ## K-MER DISTRIBUTIONS (DECODER PARAMETERS that encode the TOPIC distributions over words)
 
-python run.py --model_dir model_dir --num_topics 25 --prior_initial_value 10 --mode beta --vocab_path data/vocabulary_all8mers_with_wildcards.npy
+	python run.py --model_dir model_dir --num_topics 25 --prior_initial_value 10 --mode beta --vocab_path data/vocabulary_all8mers_with_wildcards.npy
 
 # FILE FORMATS
 
