@@ -79,8 +79,7 @@ If you want to change this input format, please look at sparse_matrix_dataset (o
 ## Vocabulary format:
 Please see the sample vocabulary file (.npy file) for how to format the <feature-id>  <feature-name>  mapping.  It is in a dictionary format. For example, below are the top few lines of the vocabulary for the k-mer model, which was converted into the vocabulary_all8mers_with_wildcards.npy file. So, if you load the dictionary, d['EMPTY']=0  and d['AAAAAAAA']=1 and so on. Please keep the first dictionary entry a dummy feature like 'EMPTY' and assign it to the index 0. Obviously, none of the examples will contain this feature :-) This is due to how the indexing is done after loading the vocabulary (i.e. the useful features should have indices >=1).
 
-EMPTY
-
+EMPTY<br>
 AAAAAAAA
 
 AAAAAAAC
