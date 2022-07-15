@@ -73,22 +73,34 @@ A list of feature-ids separated by spaces. The training / test files are formatt
 If you want to change this input format, please look at sparse_matrix_dataset (or let me know and i can help with it). See below for a file with two input examples (documents). The feature ids should be in an increasing order. Also see attached sample file (data/gm12878_all8merfeats_1k_examples.txt).
 
 112 113 113 113 122 134 144 144 144 144 159 178
+
 115 115 189 194 194 202 202 202
 
 ## Vocabulary format:
 Please see the sample vocabulary file (.npy file) for how to format the <feature-id>  <feature-name>  mapping.  It is in a dictionary format. For example, below are the top few lines of the vocabulary for the k-mer model, which was converted into the vocabulary_all8mers_with_wildcards.npy file. So, if you load the dictionary, d['EMPTY']=0  and d['AAAAAAAA']=1 and so on. Please keep the first dictionary entry a dummy feature like 'EMPTY' and assign it to the index 0. Obviously, none of the examples will contain this feature :-) This is due to how the indexing is done after loading the vocabulary (i.e. the useful features should have indices >=1).
 
 EMPTY
+
 AAAAAAAA
+
 AAAAAAAC
+
 AAAAAAAG
+
 AAAAAAAT
+
 AAAAAACA
+
 AAAAAACC
+
 AAAAAACG
+
 AAAAAACT
+
 AAAAAAGA
+
 AAAAAAGC
+
 AAAAAAGG
 
 # OUTPUTS
@@ -114,8 +126,11 @@ reconstruction
 
 topics
 b'index=92 alpha=4.94 CCGCCNNC NNGGGCGG NNCCGCCC NNGGCGGG CCGCNNCC NNCCCGCC CNNCGCCC CCCGCNNC GCNNCGCC CNNCCGCC'
+
 b'index=14 alpha=1.80 NNCAGAGA NNTCTCTG NNTCTGTG NNCACAGA NNCTCTGT NNACAGAG CACAGNNA CAGAGNNA ANNCACAG NNTCACAG'
+
 b'index=17 alpha=1.74 CCCNNCCC CCNNCCCC CCCCNNCC AGGGGNNG NNGGGGAG NNCTCCCC CNNCCCCC CNNCCCCA CCCCANNC CCCCTNNC'
+
 ....
 
 global_step
