@@ -15,6 +15,7 @@ Using the supplied yaml file:
 If you have most of the dependencies already installed, the following simpler setup will suffice:
 
 	conda create -n tfp python=3.7
+ 	conda activate tfp
 	conda install tensorflow-gpu
 	conda install tensorflow-probability
 
