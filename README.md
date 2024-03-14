@@ -10,11 +10,11 @@ Please create a conda environment as shown below OR using the yaml file: tfp.yam
 
 Using the supplied yaml file:
 
-	conda env create --file=tfp.yaml
+	conda env create --name tfp --file=tfp.yaml
 
 If you have most of the dependencies already installed, the following simpler setup will suffice:
 
-	conda env create --name tfp python=3.7
+	conda create -n tfp python=3.7
 	conda install tensorflow-gpu
 	conda install tensorflow-probability
 
